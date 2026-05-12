@@ -16,7 +16,19 @@ class LinearRegression:
         error = self.predict(x) - y
         return (error**2).sum()
       
-      
+class RidgeRegression(LinearRegression):
+    """
+    >>> import importlib
+    >>> import regression
+    >>> model = regression.RidgeRegression()
+    >>> model.alpha
+    0.1
+    """
+    def __init__(self, alpha=0.1):
+        self.alpha = alpha
+        
+    def fit(self, input, output):
+        pass
       
 if __name__ == "__main__":
   import doctest
