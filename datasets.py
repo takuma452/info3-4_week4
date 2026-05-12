@@ -47,6 +47,18 @@ def polynomial2_features(input):
     return np.c_[input,poly2]
 
 def polynomial3_features(input):
+    """
+    >>> import datasets
+    >>> X, Y = datasets.load_nonlinear_example1()
+    >>> ex_X = datasets.polynomial3_features(X)
+    >>> ex_X
+    array([[ 1.   ,  0.   ,  0.   ,  0.   ],
+           [ 1.   ,  2.   ,  4.   ,  8.   ],
+           [ 1.   ,  3.9  , 15.21 , 59.319],
+           [ 1.   ,  4.   , 16.   , 64.   ]])
+    >>> Y
+    array([4., 0., 3., 2.])
+    """
     poly2 = input[:,1:] ** 2
     poly3 = input[:,1:] ** 3
     return np.c_[input,poly2, poly3]
